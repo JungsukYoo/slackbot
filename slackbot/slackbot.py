@@ -1,12 +1,5 @@
 from slackeventsapi import SlackEventAdapter
 from common.logger import Logger
-from common import slack_api
+from common import slack_bot_token, slack_signing_secret
 
-
-class SlackBot(object):
-    logger = Logger('SlackBot')
-
-    def __init__(self):
-        self.slack_client = SlackEventAdapter(slack_api)
-        self.starterbot_id = None
 
