@@ -2,12 +2,13 @@ from slackeventsapi import SlackEventAdapter
 from slacker import Slacker
 
 
-slack_signing_secret = '07255a5f310735dcd02aab5359de8690'
+slack_signing_secret = '99a219392f1c2c33b5dc6a78db832710'
 slack_events_adapter = SlackEventAdapter(slack_signing_secret, '/slack/events')
 
 
-slack_bot_token = 'xoxb-698200255669-1054001583987-cmeRD19uLu4iu03BUnAp2wvQ'
+slack_bot_token = 'xoxb-698200255669-1054001583987-e7Qpw6dhDjSHMvxEKjWHRQ0V'
 slack_client = Slacker(slack_bot_token)
+slack_client.chat.post_message("#bot", "test")
 
 
 # Example responder to greetings
