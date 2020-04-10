@@ -29,13 +29,14 @@ slack_client = Slacker(slack_bot_token)
 # Create an event listener for "message" events and print the message
 @slack_event_adapter.on('message')
 def handle_message(event_data):
+    slackbot = SlackBot()
     message = event_data['event']
 
     # If the incoming message respond
     if message.get('subtype') is None:
         msg = message.get('text')
         channel = message['channel']
-        response = slackbat.handle_command(msg)
+        response = slackbot.handle_command(msg)
         slack_client.chat.post_message(channel, 'msg')
 
     print(message)
@@ -50,10 +51,4 @@ def reaction_added(event_data):
 
 # Start the server on port 3000
 if __name__ == '__main__':
-    slackbat = SlackBot()
-<<<<<<< Updated upstream
-    slack_client.chat.post_message('#bot', 'test')
-=======
-    slack_client.chat.post_message('#bot', 'msg')
->>>>>>> Stashed changes
     app.run(host='0.0.0.0', port=3000)
