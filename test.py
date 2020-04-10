@@ -3,17 +3,16 @@ from slacker import Slacker
 from slack import RTMClient
 
 
-slack_signing_secret = '098189cadff6fdf6a9e38c1d0caac421'
+slack_signing_secret = '07255a5f310735dcd02aab5359de8690'
 slack_events_adapter = SlackEventAdapter(slack_signing_secret, '/slack/events')
 
 
-slack_bot_token = 'xoxb-698200255669-1032096473633-5SVMNID3kypMvi2Z0E0y9uzm'
+slack_bot_token = 'xoxb-698200255669-1054001583987-cmeRD19uLu4iu03BUnAp2wvQ'
 slack_client = Slacker(slack_bot_token)
 slack_client = RTMClient()
 
 
 # Example responder to greetings
-
 @slack_events_adapter.on("message")
 def handle_message(event_data):
     message = event_data["event"]
