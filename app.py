@@ -19,6 +19,13 @@ def hello():
 slack_event_adapter = SlackEventAdapter(slack_signing_secret, '/slack/events', app)
 
 
+# Create an event listener for "message" events and print the message
+@slack_event_adapter.on('message')
+def handle_message(event_data):
+    message = event_data['event']
+    print(message)
+    
+
 # Create an event listener for "reaction_added" events and print the emoji name
 @slack_event_adapter.on('reaction_added')
 def reaction_added(event_data):
