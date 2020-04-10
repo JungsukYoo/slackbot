@@ -37,7 +37,7 @@ def handle_message(event_data):
         msg = message.get('text')
         channel = message['channel']
         response = slackbot.handle_command(msg)
-        slack_client.chat.post_message(channel, 'msg')
+        slack_client.chat.post_message(channel, response)
 
     print(message)
 
