@@ -36,7 +36,7 @@ def handle_message(event_data):
         msg = message.get('text')
         channel = message['channel']
         response = slackbat.handle_command(msg)
-        slack_client.chat.post_message(channel, msg)
+        slack_client.chat.post_message(channel, 'msg')
 
     print(message)
 
@@ -51,5 +51,9 @@ def reaction_added(event_data):
 # Start the server on port 3000
 if __name__ == '__main__':
     slackbat = SlackBot()
+<<<<<<< Updated upstream
     slack_client.chat.post_message('#bot', 'test')
+=======
+    slack_client.chat.post_message('#bot', 'msg')
+>>>>>>> Stashed changes
     app.run(host='0.0.0.0', port=3000)
