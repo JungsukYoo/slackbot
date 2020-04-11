@@ -1,5 +1,4 @@
 from common.logger import Logger
-from database.models import search_all
 
 
 class SlackBot(object):
@@ -15,6 +14,7 @@ class SlackBot(object):
                 response = "관련 단어를 사용합니다."
             
             if command == 'all' or command == '전체':
+                from menu.views import search_all
                 response = search_all()
                 
         except Exception as e:
