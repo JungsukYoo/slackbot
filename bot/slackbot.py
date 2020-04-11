@@ -1,5 +1,5 @@
 from common.logger import Logger
-from menu.views import search_all
+# from menu.views import search_all
 
 
 class SlackBot(object):
@@ -14,8 +14,8 @@ class SlackBot(object):
             if command == 'help' or command == '도움말':
                 response = "관련 단어를 사용합니다."
             
-            if command == 'all' or command == '전체':
-                response = search_all()
+            # if command == 'all' or command == '전체':
+            #     response = search_all()
                 
         except Exception as e:
             self.logger.debug(e)
