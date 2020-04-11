@@ -104,10 +104,13 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-.slackbot
+.slackbot/
 
 # vscode environemts
-.vscode
+.vscode/
+
+# logs
+logs/
 
 # Spyder project settings
 .spyderproject
