@@ -1,0 +1,26 @@
+# models.py
+from app import db
+
+
+class Restaurent(db.Model):
+    __tablename__ = 'restaurent'
+
+    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+    name = db.Column(db.String(100), nullable=False)
+    phone = db.Column(db.String(15))
+    address = db.Column(db.String(255))
+    create_date = db.Column(db.DateTime)
+    modify_date = db.Column(db.DateTime)
+    is_active = db.Column(db.Boolean)
+
+
+class Restaurent_menu(db.Model):
+    __tablename__ = 'restaurent_menu'
+
+    id = db.Column(db.Integer, primary_key=True, unique=True, autoincrement=True)
+    restaurent_id = db.Column(db.ForeignKey('restaurent.id'), index=True)
+    menu = db.Column(db.String(100), nullable=False)
+    price = db.Column(db.Integer)
+    create_date = db.Column(db.DateTime)
+    modify_date = db.Column(db.DateTime)
+    is_active = db.Column(db.Boolean)   
