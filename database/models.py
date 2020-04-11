@@ -25,3 +25,9 @@ class Restaurent_menu(db.Model):
     create_date = db.Column(db.DateTime, default=datetime.now())
     modify_date = db.Column(db.DateTime)
     is_active = db.Column(db.Boolean, default=True)   
+
+
+def restaurent_all():
+    queryset = Restaurent.query.all()
+    return queryset
+
