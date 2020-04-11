@@ -14,7 +14,7 @@ class SlackBot(object):
             if command == 'help' or command == '도움말':
                 response = "관련 단어를 사용합니다."
             
-            if command == 'all' of command == '전체':
+            if command == 'all' or command == '전체':
                 response = search_all()
                 
         except Exception as e:
