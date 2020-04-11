@@ -1,4 +1,5 @@
 # models.py
+from sqlalchemy.orm import relationship, backref
 from datetime import datetime
 from app import db
 
@@ -24,4 +25,6 @@ class Restaurent_menu(db.Model):
     price = db.Column(db.Integer)
     create_date = db.Column(db.DateTime, default=datetime.now())
     modify_date = db.Column(db.DateTime)
-    is_active = db.Column(db.Boolean, default=True)   
+    is_active = db.Column(db.Boolean, default=True)
+
+    menu = db.relationship('Restaurent', primaryjoin='Restaurent_menu.restaurent_id == Restaurent.id', backref='restaurent_menu')
