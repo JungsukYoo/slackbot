@@ -5,7 +5,7 @@ from slacker import Slacker
 
 from common import slack_signing_secret, slack_bot_token
 from common.logger import Logger
-from slackbot.slackbot import SlackBot
+from bot.slackbot import SlackBot
 
 
 # This `app` represents your existing Flask app

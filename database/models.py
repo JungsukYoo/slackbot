@@ -1,4 +1,5 @@
 # models.py
+from datetime import datetime
 from app import db
 
 
@@ -9,9 +10,9 @@ class Restaurent(db.Model):
     name = db.Column(db.String(100), nullable=False)
     phone = db.Column(db.String(15))
     address = db.Column(db.String(255))
-    create_date = db.Column(db.DateTime)
+    create_date = db.Column(db.DateTime, default=datetime.now())
     modify_date = db.Column(db.DateTime)
-    is_active = db.Column(db.Boolean)
+    is_active = db.Column(db.Boolean, default=True)
 
 
 class Restaurent_menu(db.Model):
@@ -21,6 +22,6 @@ class Restaurent_menu(db.Model):
     restaurent_id = db.Column(db.ForeignKey('restaurent.id'), index=True)
     menu = db.Column(db.String(100), nullable=False)
     price = db.Column(db.Integer)
-    create_date = db.Column(db.DateTime)
+    create_date = db.Column(db.DateTime, default=datetime.now())
     modify_date = db.Column(db.DateTime)
-    is_active = db.Column(db.Boolean)   
+    is_active = db.Column(db.Boolean, default=True)   
