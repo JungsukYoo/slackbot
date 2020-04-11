@@ -1,4 +1,4 @@
-from common.logger import 
+from common.logger import Logger
 from menu.views import search_all
 
 
