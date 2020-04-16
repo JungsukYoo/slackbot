@@ -25,7 +25,7 @@ def hello():
 
 # Bind the Events API route to your existing Flask app by passing ther server
 # instance as the last param, or with `server=app`
-slack_event_adapter = SlackEventAdapter(slack_signing_secret, '/slack/events', app)
+slack_event_adapter = SlackEventAdapter(slack_signing_secret, '/jsyoo/events', app)
 
 
 # Slacker setting
@@ -62,4 +62,4 @@ def reaction_added(event_data):
 
 # Start the server on port 3000
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=3000, debug=True)
